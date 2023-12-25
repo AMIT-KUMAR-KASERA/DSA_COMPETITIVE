@@ -10,6 +10,7 @@ int main()
         scanf("%d",&arr[i]);
 
     }
+    
     printf("enter elements you want to be search \n");
     scanf("%d",&se);
     first=0;
