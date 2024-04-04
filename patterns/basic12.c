@@ -68,3 +68,12 @@ int main()
         printf("\n");
     }
 }
+/*
+enter the size of the 
+5
+*****
+*   *
+*   *
+*   *
+*****
+*/

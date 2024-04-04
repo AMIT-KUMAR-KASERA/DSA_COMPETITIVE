@@ -1,3 +1,16 @@
+/*
+enter the size of the pattern 
+6
+      1
+     232
+    34543
+   4567654
+  567898765
+ 67890109876
+
+*/
+
+
 #include<stdio.h>
 int main()
 {

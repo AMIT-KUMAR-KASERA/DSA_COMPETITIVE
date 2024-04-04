@@ -85,3 +85,17 @@ int main()
     }
    
 }
+/*
+enter the size of the diamond 
+5
+    *
+   * *
+  *   *
+ *     *
+*********
+ *     *
+  *   *
+   * *
+    *
+
+*/
