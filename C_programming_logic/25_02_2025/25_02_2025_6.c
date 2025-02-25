@@ -39,3 +39,23 @@ int main()
     return 0;
 }
 
+/*
+#include<stdio.h>
+int main()
+{
+    char ch;
+    scanf("%c",&ch);
+    if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+    {
+        printf("Alphabet");
+    }
+    if(!((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')))
+    {
+        printf("Not an alphabet");
+
+    }
+    return 0;
+}
+*/
+
+
