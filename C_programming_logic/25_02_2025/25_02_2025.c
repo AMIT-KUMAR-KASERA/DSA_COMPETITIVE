@@ -36,3 +36,22 @@ int main()
      }
     return 0;
 }
+
+/*
+#include <stdio.h>
+
+int main()
+{
+    int num1;
+    scanf("%d",&num1);
+    if(num1%3==0&&num1%5==0)
+    {
+        printf("Multiple of both 3 and 5");
+        return 0;
+    }
+ 
+    printf("Not a Multiple of both 3 and 5");
+
+    return 0;
+}
+*/
