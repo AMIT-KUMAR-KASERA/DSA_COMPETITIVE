@@ -361,6 +361,63 @@ int main()
 
 }
 
+/*Q. Write a C program that prints numbers from 1 to 10 using only goto and lable and if.
+Q. Write a C program to print all even numbers from 2 to 20 using only goto and a label an if .
+Q. Write a C program to print the first 10 multiples of a given number using only goto and a label and if. Do not use loops.
+Input as :
+Enter a number : 5
+Output as: 5 10 15 20 25 30 35 40 45 50
+
+*/
+answer:-
+
+#include <stdio.h>
+int main()
+{
+    int i=0;
+    label:
+    if(i<=20)
+    {
+        printf("%d \n",i);
+        i=i+1;
+        goto label;
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    int i=0;
+    label:
+    if(i<=20)
+    {
+        printf("%d \n",i);
+        i=i+2;
+        goto label;
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    int num,i=1 ;
+    printf("enter a number \n");
+    scanf("%d",&num);
+    label:
+    if(i<=10)
+    {
+        printf("%d \n",i*num);
+        i++;
+        goto label;
+    }
+
+    return 0;
+}
+
 
 
 
