@@ -1,4 +1,4 @@
-/* Program Questions
+/* Program Questions                                                                                              25_02_2025
 Multiple of Both 3 and 5
 Write a C program that checks if a number is divisible by both 3 and 5.
 Sample Input
