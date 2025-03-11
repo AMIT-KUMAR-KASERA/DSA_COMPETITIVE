@@ -84,7 +84,7 @@ python, c, csharp, java, javascript
 */
 
 
- /* Number is Between 1 and 100
+ /* 3.Number is Between 1 and 100
 Write a C program that checks if a number is between 1 and 100.
 Sample Input
 50
@@ -129,7 +129,7 @@ int main()
 }
 
 
-/*
+/*4.
 Character is Uppercase or Lowercase
 Write a C program that checks if a given character is uppercase or lowercase.
 Sample Input
@@ -195,7 +195,8 @@ int main()
 }
 */
 
-/* CheckPositiveNegativeOrZero
+/* 5.
+CheckPositiveNegativeOrZero
 Write a C program that checks if a given number is positive, negative, or zero.
 Sample Input
 10
@@ -243,7 +244,7 @@ int main()
 }
 
 
-/*
+/*6. 
 Character is Alphabet
 Write a C program that checks if the entered character is an alphabet letter or not.
 Sample Input
@@ -304,7 +305,7 @@ int main()
 */
 
 
-/*
+/* 7.
 NumberIsDivisibleByFive
 Write a C program that checks if a given number is divisible by 5.
 Sample Input
