@@ -449,3 +449,324 @@ int main()
     printf("%d occurs %d times.",num2,count);
 }
 */
+
+
+
+													12-02-2025
+
+/*
+	Program Questions
+PrintFirstNNaturalNumberAndSum
+Write a C program to calculate the sum of the first N natural numbers using a for loop.
+input :
+	Enter a number: 5
+output :
+	The sum of the first 5 natural numbers is: 15
+Sample Input
+5
+Sample Output
+The sum of the first 5 natural numbers is: 15
+
+*/
+
+#include<stdio.h>
+int main()
+{
+    int num,i,sum=0;
+    scanf("%d",&num);
+    if(num>0){
+    for(i=1;i<=num;i++)
+    {
+        sum=sum+i;
+    }
+    printf("The sum of the first %d natural numbers is: %d",num,sum);
+    }
+    else
+    {
+        printf("Negative value not Allowed");
+    }
+}
+
+
+
+/*
+
+PrintDivisors
+Write a C program to print all divisors of a given number n using a for loop.
+Input:
+	Enter a number: 12
+Output:
+	The divisors of 12 are: 1 2 3 4 6 12
+Sample Input
+6
+Sample Output
+The divisors of 6 are: 1 2 3 6
+*/
+#include<stdio.h>
+int main()
+{
+    int num1,i;
+    scanf("%d",&num1);
+    if(num1>0)
+    {
+        printf("The divisors of %d are: ",num1);
+    for(i=1;i<=num1;i++)
+    {
+        if(num1%i==0)
+        {
+           printf("%d ",i);
+        }
+       
+    }
+    }
+    else
+    {
+        printf("Negative value not allowed");
+    }
+
+}
+
+/*
+
+GreatestCommonDivisor
+Write a C program to find the Greatest Common Divisor (GCD) of two numbers using a for loop.
+
+Input:
+	Enter two numbers: 12 18
+Output:
+	The GCD of 12 and 18 is: 6
+Sample Input
+12 18
+Sample Output
+The GCD of 12 and 18 is: 6
+
+*/
+#include<stdio.h>
+int main()
+{
+    int num1,num2,i,gcd;
+    scanf("%d%d",&num1,&num2);
+    if(num1>0&&num2>0)
+    {
+    for(i=1;i<=num1&&i<=num2;i++)
+    {
+        if(num1%i==0&&num2%i==0)
+        {
+            gcd=i;
+        }
+
+    }
+    printf("The GCD of %d and %d is: %d",num1,num2,gcd);
+    }
+    else
+    {
+        printf("Negative value not allowed");
+    }
+
+}
+
+/*
+PrintNumberUptoGivenN
+Write a C program to print all the numbers from 1 to a given number N using a for loop.
+input :
+	Enter a number: 5
+output :
+	1 2 3 4 5
+Sample Input
+5
+Sample Output
+1 2 3 4 5
+
+*/
+#include<stdio.h>
+int main()
+{
+    int num1,i;
+    scanf("%d",&num1);
+    if(num1>0)
+    {
+    for(i=1;i<=num1;i++)
+    {
+        printf("%d ",i);
+    }
+    }
+    else
+    {
+        printf("Negative value not Allowed");
+    }
+
+}
+
+
+/*
+
+PrintTable
+Write a C program to display the multiplication table of a number N using a for loop.
+Input:
+	Enter a number: 4
+Output:
+4 x 1 = 4
+4 x 2 = 8
+4 x 3 = 12
+.
+.
+.
+4 x 9 = 36
+4 x 10 = 40
+Sample Input
+2
+Sample Output
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+
+*/
+#include<stdio.h>
+int main()
+{
+    int num1,i;
+    scanf("%d",&num1);
+    if(num1>0)
+    {
+    for(i=1;i<=10;i++)
+    {
+        printf("%d x %d = %d\n",num1,i,num1*i);
+    }
+    }
+    else
+    {
+        printf("Negative value not allowed");
+    }
+}
+
+
+
+/*
+
+Ques-1
+___________
+Write a program in C to display the cube of the number up to an integer.
+
+Test Data :
+Input number of terms : 5
+Expected Output :
+Number is : 1 and cube of the 1 is :1
+Number is : 2 and cube of the 2 is :8
+Number is : 3 and cube of the 3 is :27
+Number is : 4 and cube of the 4 is :64
+Number is : 5 and cube of the 5 is :125
+
+
+*/
+#include<stdio.h>
+int main()
+{
+    int num,i;
+    scanf("%d",&num);
+    for(i=1;i<=num;i++)
+    {
+        printf("Number is : %d and cube of the %d is :%d\n",i,i,i*i*i);
+    }
+}
+
+Ques-2
+__________
+Write a program in C to display the multiplication table for a given integer. 
+
+Test Data :
+Input the number (Table to be calculated) : 15
+Expected Output :
+15 X 1 = 15
+...
+...
+15 X 10 = 150 
+
+#include<stdio.h>
+int main()
+{
+    int num,i;
+    scanf("%d",&num);
+    for(i=1;i<=10;i++)
+    {
+      printf("%d X %d = %d\n",num,i,num*i);
+    }
+}
+
+/*
+Ques-3
+____________
+Write a C program to display the sum of n terms of even natural numbers.
+
+Test Data :
+Input number of terms : 5
+Expected Output :
+The even numbers are :2 4 6 8 10
+The Sum of even Natural Number upto 5 terms : 30
+*/
+#include<stdio.h>
+int main()
+{
+    int num,i,sum=0;
+    scanf("%d",&num);
+    printf("The even numbers are :");
+    for(i=2;i<=num*2;i=i+2)
+    {
+        printf("%d ",i);
+        sum=sum+i;
+    }
+    printf("\nThe Sum of even Natural Number upto %d terms : %d",num,sum);
+        
+      
+}
+/*
+Ques-4
+____________
+Write a program in C to find the sum of the series 1 +11 + 111 + 1111 + .. n terms.
+
+Test Data :
+Input the number of terms : 5
+Expected Output :
+1 + 11 + 111 + 1111 + 11111
+The Sum is : 12345
+
+*/
+
+#include<stdio.h>
+int main()
+{
+    int num,i,sum=0,multi=0;
+    scanf("%d",&num);
+    for(i=1;i<num;i++)
+    {
+        multi=multi*10+1;
+        printf("%d + ",multi);
+        sum=sum+multi;
+    }
+    printf("%d",(multi*10)+1);
+    printf("\n");
+    printf("The Sum is : %d",sum+((multi*10)+1));      
+      
+}
+/*
+Ques-5
+_________
+ Write a program in C to display the n terms of a harmonic series and their sum.
+1 + 1/2 + 1/3 + 1/4 + 1/5 ... 1/n terms
+
+Test Data :
+Input the number of terms : 5
+Expected Output :
+1/1 + 1/2 + 1/3 + 1/4 + 1/5 +
+Sum of Series upto 5 terms : 2.283334
+
+
+*/
+
+
