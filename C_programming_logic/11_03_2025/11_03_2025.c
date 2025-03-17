@@ -769,4 +769,562 @@ Sum of Series upto 5 terms : 2.283334
 
 */
 
+                                                                                                       13 to 14_03_2025
 
+/*
+
+	PrimeFactor
+Write a C program to input a number from user and find Prime factors of the given number using
+loop. 
+
+Input as : 10
+Expected output as :
+Prime factors of 10 : 2 5
+Sample Input
+10
+Sample Output
+Prime factors of 10: 2 5
+
+
+Input:
+5
+
+Expected Output:
+Prime factors of 5: 5
+
+Input:
+-12
+
+Expected Output:
+Please Enter Positive Number
+
+Input:
+12
+
+Expected Output:
+Prime factors of 12: 2 3
+
+first method 1.
+
+*/
+#include<stdio.h>
+int main()
+{
+    int num,i,j,c=0;
+    scanf("%d",&num);
+    if(num>0){
+        printf("Prime factors of %d: ",num);
+    for(i=2;i<=num;i++)
+    {
+        if(num%i==0)
+        {
+           for(j=2;j<i;j++)
+           {
+            if(i%j==0)
+            {
+                c++;
+            }
+           
+           }
+           if(c==0)
+           {
+             printf("%d ",i);
+           }
+        }
+    }
+   
+    }
+    else
+    {
+        printf("Please Enter Positive Number");
+    }
+
+}
+
+
+2nd method
+
+
+#include<stdio.h>
+int main()
+{
+    int num,i,j,c=0;
+    scanf("%d",&num);
+    if(num>0){
+        printf("Prime factors of %d: ",num);
+    for(i=2;i<=num;i++)
+    {
+        if(num%i==0)
+        {
+          printf("%d ",i);
+          num=num/i;
+        }
+    }
+   
+    }
+    else
+    {
+        printf("Please Enter Positive Number");
+    }
+
+}
+
+
+
+/*
+
+ArmstrongNumber
+Write a C program to find all Armstrong numbers between 100 to 999 any number
+A three digit number is called Armstrong number if sum of cube of its digit is equal to number itself.
+E.g.- 153 is an Armstrong number because (1)^3+(5)^3+(3)^3 = 153.
+
+Sample Input
+100
+200
+Sample Output
+Armstrong numbers between 100 and 200: 153
+
+Input:
+100 200
+
+Expected Output:
+Armstrong numbers between 100 and 200: 153
+
+Input:
+200 500
+
+Expected Output:
+Armstrong numbers between 200 and 500: 370 371 407
+
+Input:
+-300 500
+
+Expected Output:
+Please Enter positive value
+
+
+Input:
+300 -500
+
+Expected Output:
+Please Enter positive value
+
+Program Questions
+AddUntillBecameOneDigit
+
+*/
+#include<stdio.h>
+int main()
+{
+    int num1,num2,i=0,rem=0;
+    scanf("%d%d",&num1,&num2);
+    if(num1>0&&num2>0){
+        if(num1>99&&num2<1000){
+      printf("Armstrong numbers between %d and %d: ",num1,num2);
+    for(i=num1;i<num2;i++)//i = 153 154
+    {  int c=0;
+        int m=i;//153
+        while(m!=0){ //153   15 1
+       rem=m%10; // 3 5 1
+       c=c+rem*rem*rem;// 0+ 27 = 27 + 125 = 152 + 1 = 153
+       m=m/10; // 15 1 0
+
+        }
+        if(i==c)
+        {
+            printf("%d ",c);
+        }
+
+    }
+    }
+   
+}
+    else
+    {
+        printf("Please Enter positive value");
+    }
+
+}
+/*
+Write a C program to add all the digits present in a given number until it became a single digit.
+[if the number is 5678, sum of digit =5+6+7+8=26 , again sum of digit of the sum : 2+6=8] 
+
+Input as : 5678
+
+Ouput as : 8
+
+Sample Input
+5678
+Sample Output
+Single digit sum: 8
+
+
+Input:
+5678
+
+Expected Output:
+Single digit sum: 8
+
+Input:
+1234
+
+Expected Output:
+Single digit sum: 1
+
+Input:
+2356
+
+Expected Output:
+Single digit sum: 7
+
+Input:
+4567
+
+Expected Output:
+Single digit sum: 4
+
+
+Input:
+4567
+
+Expected Output:
+Single digit sum: 4
+
+
+Input:
+-3557
+
+Expected Output:
+Please Enter Positive value
+
+*/
+
+#include<stdio.h>
+int main()
+{
+    int num1,sum;
+    scanf("%d",&num1);
+    if(num1>0)
+    {
+        
+      while(num1>9)
+      {
+        int sum=0;
+        while(num1!=0)
+        {
+          int rem=0;
+            rem=num1%10;
+            sum=sum+rem;
+            num1=num1/10;
+        }
+        num1=sum;
+      }
+      printf("Single digit sum: %d",num1);
+    }
+    else
+    {
+        printf("Please Enter Positive value");
+    }
+}
+
+
+
+we need dry run
+
+#include<stdio.h>
+int main()
+{
+    int num1,c=0,sum=0;
+    scanf("%d",&num1);
+    if(num1>0)
+    {
+        
+      while(num1>9)
+      {
+        
+        while(num1!=0)
+        {
+          int rem=0;
+            rem=num1%10;
+            sum=sum+rem;
+            num1=num1/10;
+        }
+        num1=sum;
+    
+      }
+      printf("Single digit sum: %d",num1);
+    }
+    else
+    {
+        printf("Please Enter Positive value");
+    }
+}
+
+/*
+
+palindrome or Not
+[Title:- Armstrong or Not]
+--------------------------
+
+Write a C program to check whether a given integer is a palindrome. A number is considered a palindrome if the reverse of the number is equal to the original number.
+The program should prompt the user to enter an integer, reverse the number, and then compare it to the original number to determine if it is a palindrome.
+
+Valid Test Cases :-
+-------------------
+Test-Case-1 :-
+--------------
+Input: 121
+Output: 121 is a palindrome.
+
+Test-Case-2 :-
+--------------
+Input: 0
+Output: 0 is a palindrome.
+
+Test-Case-3 :-
+---------------
+Input: 12321
+Output: 12321 is a palindrome.
+
+Test-Case-4 :-
+--------------
+Input: 12345
+Output: 12345 is not a palindrome.
+
+
+
+Input:
+121
+
+Expected Output:
+121 is a palindrome.
+
+Input:
+1233
+
+Expected Output:
+1233 is not a palindrome.
+
+
+Input:
+44544
+
+Expected Output:
+44544 is a palindrome.
+*/
+#include<stdio.h>
+int main()
+{
+    int num,sum=0,rev,n;
+    scanf("%d",&num);
+     n=num;
+    for(;n!=0;n=n/10)
+    {
+       rev=n%10;
+       sum=sum*10+rev;
+
+    }
+    if(num==sum)
+    {
+       printf("%d is a palindrome.",sum);
+    }
+    else
+    {
+        printf("1233 is not a palindrome.");
+    }
+}
+
+
+
+
+/*
+
+UniqueNumber
+Write a C program to print all the unique digits present in a given number.
+
+Input as : 112334
+
+Output as: 2 4
+Sample Input
+112334
+Sample Output
+Unique digits: 2 4
+
+
+Input:
+112334
+
+Expected Output:
+Unique digits: 2 4
+
+
+Input:
+56525
+
+Expected Output:
+Unique digits: 2 6
+
+
+Input:
+-7656
+
+Expected Output:
+Please Enter Positive values
+
+
+Input:
+11112
+
+Expected Output:
+Unique digits: 2
+
+*/
+
+
+
+pendding
+
+
+
+
+/*	
+
+FibonacciSeries
+Write a C program to print Fibonacci series up to n terms.
+
+ Input :
+	Enter a number : 5
+Expected Output :
+0 1 1 2 3 
+Sample Input
+5
+Sample Output
+0 1 1 2 3
+
+*/
+
+#include<stdio.h>
+int main()
+{
+    int num1,i,n1=0,n2=1,n3;
+    scanf("%d",&num1);
+    if(num1>0){
+        printf("%d %d",n1,n2);
+    for(i=0;i<num1-2;i++)
+    {
+      n3=n1+n2;
+      printf(" %d",n3);
+      n1=n2;
+      n2=n3;
+    }
+    }
+    else
+    {
+        printf("Please enter a positive integer.");
+    }
+}
+
+/*
+Prime Number
+[Title:- Prime Number Check]
+----------------------------
+
+(USING FOR LOOP)
+Write a C program to check whether a given number is a prime number or not.
+
+Test-Cases-1 :- Valid Prime Number
+---------------
+Input :-
+--------
+Enter a number: 7
+
+Expected Output :-
+-------------------
+7 is a prime number.
+
+Explanation :- 7 is divisible only by 1 and itself, making it a prime number.
+--------------
+
+Test-Cases-2 :- Invalid (Non-Prime) Number
+---------------
+Input :-
+---------
+Enter a number: 10
+
+Expected Output :-
+------------------
+10 is not a prime number.
+
+Explanation :- 10 is divisible by 1, 2, 5, and 10, so it is not a prime number.
+--------------
+
+Test-Cases-3 :- Invalid Input (Negative Number)
+---------------
+Input :-
+--------
+Enter a number: -5/0
+
+Expected Output :-
+------------------
+Invalid input. Enter a positive integer.
+Sample Input
+7
+Sample Output
+7 is a prime number.
+
+
+Input:
+7
+
+Expected Output:
+7 is a prime number.
+
+
+Input:
+5
+
+Expected Output:
+5 is a prime number.
+
+
+Input:
+10
+
+Expected Output:
+10 is not a prime number.
+
+Input:
+-5
+
+Expected Output:
+Invalid input. Enter a positive integer.
+
+*/
+#include<stdio.h>
+int main()
+{
+    int num1,i,c=0;
+    scanf("%d",&num1);
+    if(num1>0)
+    {
+        for(i=1;i<=num1;i++)
+        {
+            if(num1%i==0)
+            {
+             c++;
+            }
+        }
+        if(c==2)
+        {
+            printf("%d is a prime number.",num1);
+        }
+        else{
+            printf("%d is not a prime number.",num1);
+        }
+
+    }
+    else
+    {
+        printf("Invalid input. Enter a positive integer.");
+    }
+}											       
