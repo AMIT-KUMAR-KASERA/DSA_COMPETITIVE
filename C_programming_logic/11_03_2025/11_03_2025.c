@@ -1328,3 +1328,220 @@ int main()
         printf("Invalid input. Enter a positive integer.");
     }
 }											       
+
+
+
+
+                        										17_03_25
+/*
+
+AdamNumber
+If a number when reversed, the square of the number and the square of the reversed number should be number which are reverse to each other, is Adam number.
+Example: 
+Input: 12
+12 ^ 2 = 144
+21 ^ 2 = 441
+The reverse of 144 is equal to 441 and reverse of 441 is equal to 144 so., 12 is an Adam number.
+11, 12, 13, 21, 22, 31, 101, 102, 103, 111, 112, 113, 121 ... are Adam numbers.
+Sample Input
+12
+Sample Output
+12 is an Adam number.
+
+
+*/
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int num,p,s,r;
+    scanf("%d",&num);
+    if(num>0){
+        r=num; //225 
+    p=num*num;//15*15
+    while(r!=0)  //15!=0 true
+    {
+     int rev=r%10; //5 1
+      s=s*10+rev; //5   51
+      r=r/10;  //1
+    }
+    s=s*s;  //  2601
+    while(p!=0) //225
+    {
+     int   rev=p%10; //5 2 2
+     r=r*10+rev; //5 522
+     p=p/10;//22 2
+        
+    }
+    if(s==r)
+    {
+        printf("%d is an Adam number.",num);
+    }
+    else
+    {
+        printf("%d is not an Adam number.",num);
+    }
+    }
+    else{
+        printf("Enter Positive value only...");
+    }
+
+}
+
+
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int num,p,s,r;
+    scanf("%d",&num);
+    if(num>0){
+        r=num; //225 
+    p=num*num;//15*15
+    for(;r!=0;r=r/10)  //15!=0 true
+    {
+     int rev=r%10; //5 1
+      s=s*10+rev; //5   51
+        //1
+    }
+    s=s*s;  //  2601
+    for(;p!=0;p=p/10) //225
+    {
+     int   rev=p%10; //5 2 2
+     r=r*10+rev; //5 522
+     //22 2
+        
+    }
+    if(s==r)
+    {
+        printf("%d is an Adam number.",num);
+    }
+    else
+    {
+        printf("%d is not an Adam number.",num);
+    }
+    }
+    else{
+        printf("Enter Positive value only...");
+    }
+
+}
+
+
+
+
+/*
+
+AlternateDigitSum
+Write a C program to find the alternate digit sum is same or not.
+
+Example-1 as: 12345
+
+1+3+5=9
+2+4=6
+
+Output as: Alternate digit sum is not same.
+
+Example-2 as: 12122
+1+1+2=4
+2+2=4
+
+Output as : Alternate digit sum is same.
+Sample Input
+12122
+Sample Output
+Alternate digit sum is same.
+
+*/
+
+#include<stdio.h>
+int main()
+{
+    int num1,s=0,n1,r=0;
+    scanf("%d",&num1);
+    if(num1>0){
+    n1=num1;//12122
+    for(;n1!=0;n1=n1/100)
+    {
+       int rem=n1%10; 
+        s=s+rem; 
+    }
+    num1=num1/10;
+    for(;num1!=0;num1=num1/100)
+    {
+        int rem;
+        rem=num1%10;
+        r=r+rem;
+
+    }
+    if(s==r)
+    {
+        printf("Alternate digit sum is same.");
+    }
+    else
+    {
+        printf("Alternate digit sum is not same.");
+    }
+    }
+    else{
+        printf("Invalid Number");
+    }
+}
+
+
+
+/*
+
+PrimeNumbersInRange
+Write a C program to find and print all Prime numbers within a given range of two integers, N1 and N2 and count.
+The program should read N1 and N2 from the user and display all Prime numbers in this range. 
+
+Sample input : 
+	Enter first number : 20
+	Enter second number : 10
+Sample output :  11  13  17  19 and count is 4 
+
+Sample Input
+10 20
+Sample Output
+Prime numbers in the range are: 11 13 17 19 and count is 4
+
+*/
+
+#include<stdio.h>
+int main()
+{
+    int num1,num2,temp;
+    scanf("%d%d",&num1,&num2);
+    if(num1>num2){
+        temp=num1;
+        num1=num2;
+        num2=temp;
+    }
+    printf("Prime numbers in the range are: ");
+    int c=0;
+    for(int i=num1;i<=num2;i++)
+    {
+        int t=0;
+        for(int j=1;j<=i;j++)
+        {
+            if(i%j==0)
+            {
+              t++;
+            }
+            
+            
+        }
+        if(t==2)
+        {
+            printf("%d ",i);
+            c++;
+        }
+
+    }
+    printf("and count is %d",c);
+}
+														
+
