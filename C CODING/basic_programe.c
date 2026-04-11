@@ -1,3 +1,7 @@
+
+
+
+
 /*                                                                                                    11_03_2025
 
   1.                                                                          
@@ -4884,4 +4888,68 @@ int main()
     }
     printf("%d is the highest digit in the number.",s);
 
+}
+
+
+
+/******************************************************************************
+
+Write a C program using the ternary operator to calculate the electricity bill for a given number of units consumed by a customer.
+For the first 100 units, the rate is Rs. 3.00 per unit.
+For any additional units beyond 100, the rate is Rs. 4.50 per unit.
+
+Example 1: Units consumed less than or equal to 100
+Sample Input: units consumed : 75
+Sample Output: The total electricity bill is: Rs. 225.00
+        
+Example 2: Units consumed more than 100
+Sample Input: units consumed: 150
+Sample Output: The total electricity bill is: Rs. 525.00
+        
+Example 3: Units consumed exactly 0
+Sample Input: units consumed: 0
+Sample Output: The total electricity bill is: Rs. 0.00
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float unit;
+    printf("enter units that the user consume \n");
+    scanf("%f",&unit);
+    (unit<=100)?printf("the total electricity bill is : %.2f",unit*3.00):(unit>100)?printf("the total electricity bill is: Rs %.2f",(100*3.00)+(unit-100)*4.50):printf("the total electricity bill is RS. %.2f",unit*0);
+
+    return 0;
+}
+
+
+
+
+
+/******************************************************************************
+
+Develop a program on a payroll system for a company. 
+The system needs to calculate the salary of an employee 
+based on their employee type ('M' for manager or 'H' for HR employee) 
+and their basic salary. 
+For managers, their salary should be increased by 10% as a performance bonus and 
+for HR  increased by 5% . Write a C program that takes the employee type and basic salary as 
+inputs and calculates the increased salary using the ternary operator.
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    char ch;
+    float salary;
+    printf("enter the employee types \n");
+    scanf("%c",&ch);
+    printf("enter the basic salary of the employee \n");
+    scanf("%f",&salary);
+    (ch=='M')?printf("the salary should be increase by the managers %.2f",salary*10/100):(ch=='H')&&printf("the increate by the hr %.2f ",salary*5/100);
+
+    return 0;
 }
