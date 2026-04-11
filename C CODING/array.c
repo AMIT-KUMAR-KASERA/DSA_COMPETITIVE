@@ -3101,8 +3101,1463 @@ After rotating from 4th position the array is:12 14 18 20 22 25 27 0 3 6 9
 
 =================================================================================================================================
   
+Find Pair
+Write a program to print pairs of two number whose sum is equals to given number
+
+Test Case 1 :
+-------------
+input :
+size = 8
+array elements = -3 -2 1 2 4 5 6 7
+given number = 2
+
+output :
+Pairs with sum 2 are:
+(-3, 5)
+(-2, 4)
 
 
+Test Case 2 :
+-------------
+input :
+size = 10
+array elements = 1 2 3 4 5 6 7 8 9 10
+given number = 10
+
+output :
+Pairs with sum 10 are:
+(1, 9)
+(2, 8)
+(3, 7)
+(4, 6)
+
+
+Test Case 3 :
+-------------
+input :
+size = 5
+array elements = 1 2 3 4 5
+given number = 10
+
+output :
+No Pairs
+
+Sample Input
+8
+-3
+-2
+1
+2
+4
+5
+6
+7
+2
+Sample Output
+(-3, 5)
+(-2, 4)
+
+
+#include<stdio.h>
+int main()
+{
+    int size,result,flag=0;
+    scanf("%d",&size);
+    int arr[size];
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    scanf("%d",&result);
+    for(int p=0;p<size;p++)
+    {
+        for(int q=p+1;q<size;q++)
+        {
+           if((arr[p]+arr[q])==result)
+           {
+            printf("(%d, %d)",arr[p],arr[q]);
+            flag=1;
+           }
+        }
+    
+        printf("\n");
+    }
+     if(flag!=1)
+        {
+            printf("No Pairs");
+        }
+}
+
+
+
+
+
+
+
+
+OddNumberTimes
+Write a program in C to find the number occurring odd number of times in an array.
+
+All numbers occur even number of times except one number which occurs odd number of times.
+
+
+Test Case 1 :
+---------------
+ Input :
+ Enter array size : 9 
+ Enter 9 elements in the array : 8 3 8 5 4 3 4 3 5
+
+ Expected Output :
+ The element odd number of times is : 3
+
+
+Test Case 2 :
+---------------
+ Input :
+ Enter array size : 8 
+ Enter 9 elements in the array : 1 1 3 1 2 3 2 2
+
+ Expected Output :
+ The element odd number of times is : 1 2
+
+
+Test Case 3 :
+---------------
+ Input :
+ Enter array size : 8 
+ Enter 9 elements in the array : 1 1 2 2 1 1 3 3
+
+ Expected Output :
+ Element Not Found
+
+Sample Input
+9
+8
+3
+8
+5
+4 
+3
+4
+3
+5
+Sample Output
+The element odd number of times is :3 
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int size,j=0;
+    scanf("%d",&size);
+    int arr[size];
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+   printf("The element odd number of times is :");
+    for(int p=0;p<size;p++)
+    {
+        int result=1,flag=0;
+       for(int q=p+1;q<size;q++)
+       {
+        if(arr[p]==arr[q])
+        {
+            result++;
+            flag=1;
+        }
+       }
+       if(flag==1)
+       {
+       
+        if(result%2!=0)
+        {
+            
+            printf("%d ",arr[p]);
+            j=1;
+        }
+        
+       
+       }
+       
+    }
+    if(j!=1)
+    {
+        printf("Element Not Found");
+    }
+    
+}
+
+
+
+
+
+
+FindSecondLargestElement
+
+Write a program to print Second Largest Element of array.
+
+Test Case 1 :
+-------------
+size = 9
+elements = 1 2 3 4 5 6 1 6 4
+output : 5
+
+
+Test Case 2 :
+-------------
+size = 5
+elements = 1 1 1 1 1
+output : Not Found
+
+Test Case 3 :
+-------------
+size = 1
+elements = 1 
+output : Not Found
+Sample Input
+9
+1
+2
+3
+4
+5
+6
+1
+6
+4
+Sample Output
+Second Largest element is :-5
+
+
+
+Input:
+9 1 2 3 4 5 6 1 6 4
+
+Expected Output:
+Second Largest element is :-5
+
+Input:
+5 1 1 1 1 1
+
+Expected Output:
+Not Found
+
+Input:
+1 1
+
+Expected Output:
+Not Found
+
+
+
+PrintUniqueElements
+Write a C program to print all the unique elements from an array.
+
+Sample input :
+Enter the number of elements in the array: 6
+Enter 6 elements: 10 20 20 30 40 10
+
+Sample output :
+Unique elements in the array: 30 40
+Sample Input
+6
+10 20 20 30 40 10
+Sample Output
+30 40
+
+
+Input:
+6 10 20 30 40 10 20
+
+Expected Output:
+Unique elements in the array: 30 40 
+
+
+Input:
+7 5 5 8 9 9 10 2
+
+Expected Output:
+Unique elements in the array: 8 10 2 
+
+Input:
+5 1 21 12 21 1
+
+Expected Output:
+Unique elements in the array: 12 
+
+
+FindSecondSmollestElement
+Write a program to print Second Smallest Element of array.
+
+Test Case 1 :
+-------------
+size = 9
+elements = 1 9 3 4 5 6 1 6 4
+output : 3
+
+
+Test Case 2 :
+-------------
+size = 5
+elements = 1 1 1 1 1
+output : Not Found
+
+Test Case 3 :
+-------------
+size = 1
+elements = 1 
+output : Not Found
+Sample Input
+9
+1
+9
+3
+4
+5
+6
+1
+6
+4
+Sample Output
+second smollest element :- 3
+
+
+Input:
+9 1 9 3 4 5 6 1 6 4
+
+Expected Output:
+second smollest element :- 3
+
+
+Input:
+5 1 1 1 1 1
+
+Expected Output:
+Not Found
+
+Input:
+1 1
+
+Expected Output:
+Not Found
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+Q1.CountTheFrequencyOfEachElement
+Write a program in C to count the frequency of each element of an array.
+
+Sample input :
+Enter size of array : 5
+Enter 5 elements    : 43 25 12 43 43 
+
+Sample output :
+The frequency of all elements of an array :
+25 occurs 1 times
+12 occurs 1 times
+43 occurs 3 times
+Sample Input
+5
+43 25 12 43 43
+Sample Output
+25 occurs 1 times
+12 occurs 1 times
+43 occurs 3 times
+
+ANS:
+
+
+
+
+
+
+
+Q2.DeleteElementGivenElementFromArray
+Write a C program to delete a given element from an array.
+
+Sample input :
+Enter the number of elements in the array: 8
+Enter 8 elements : 10 20 30 30 30 40 50 30
+Enter the element to be deleted: 30
+
+Sample output :
+Array after deletion: 10 20 40 50
+Sample Input
+8
+10 20 30 30 30 40 50 30
+30
+Sample Output
+10 20 40 50
+
+ANS:
+
+
+
+
+
+
+Q3.Remove Unique Elements
+[Title:- Remove Unique Elements]
+---------------------------------
+Write a c program to remove all unique elements from an array and return a new array containing only the duplicate elements.
+
+The program should take an array of integers as input, process it to remove the unique elements, and return a new array with only the elements that occur more than once.
+
+Example :-
+----------
+Input: arr = {1, 2, 3, 1, 1, 1, 2, 4, 5}
+Output: [1, 2, 1, 1, 1, 2]
+
+Test-Cases :-
+-------------
+Test-Case-1 :-
+--------------
+Input :- arr = {1, 2, 3, 1, 1, 1, 2, 4, 5}
+--------
+Output :- 1 2 1 1 1 2
+---------
+Explanation: Only the duplicate elements 1 and 2 are retained in the output array.
+
+Test-Case-2 :-
+--------------
+Input :- arr = {5, 6, 7, 8, 9}
+--------
+Output :- 
+---------
+Explanation :- All elements are unique, so the output is an empty array.
+--------------
+
+Test-Case-3 :-
+--------------
+Input :- arr = {1, 1, 1, 1, 1}
+--------
+Output :- 1 1 1 1 1
+----------
+Explanation :- All elements are duplicates, so the output is the same as the input.
+--------------
+
+Test-Case-4 :-
+--------------
+Input :- arr = {} -> if size of the array is 0
+--------
+Output :- 
+----------
+Explanation :- The input is an empty array, so the output is also an empty array. Would you like me to provide the Java code implementation for this question?
+--------------
+Sample Input
+5
+1
+2
+3
+1
+2
+Sample Output
+1 2 1 2 
+
+ANS:
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Arrays Day 6
+
+Program 1) Write a C program to find and print all the missing elements that are not present in a given array. Given an array of integers, your task is to identify and print all the numbers that are missing within a specified range.
+For example:
+
+given the input array arr = [1, 4, 7, 12, 17] 
+
+Expected output as : 2 3 5 6 8 9 10 11 13 14 15 16
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+  int arr[17]={1,4,7,12,17};
+ 
+  for(int j=0;j<3;j++)
+  {
+      
+      for(int i=j+1;i<=arr[j];i++)  // 3
+      {
+          if(arr[j]==i)   // 4==1
+          {
+             break;
+          }
+          else
+          {
+              printf("%d",i);
+          }
+      }
+  }
+}
+
+--------------------------------------------------------------------
+Program 2) Write a C program that rearranges the elements of a given array by moving all the zeros to the front. The program should take an array as input and swap the positions of non-zero elements with zeros, such that all the zeros appear at the beginning of the array, while maintaining the relative order of non-zero elements.
+For example: 
+given the input array: [1, 0, 2, 0, 4, 5, 0, 3, 0]
+Expected output:
+1 2 4 5 3 0 0 0 0
+------------------------------------------------------------------------
+Program 3)Write a C program to remove all occurrences of a specific element from a given array of integers. The program should display the resulting array after removing the element.
+
+Test Data :
+Input the size of array : 10
+Input 10 elements in the array : 
+3 2 5 6 2 7 9 2 2 1
+
+Input the element that you want to delete: 2
+
+Expected Output : 
+
+The new list is : 3 5 6 7 9 1
+
+----------------------------------------------------------------------
+
+Program 4) Write a C program to insert an element in an array.
+Example
+Input:-
+Input array elements: 10, 20, 30, 40, 50
+Input element to insert: 25
+Input position where to insert: 3
+Output:-
+Elements of array are: 10, 20, 25, 30, 40, 50
+----------------------------------------------------------------------
+5)Write a program in C to merge two arrays of same size sorted in decending order. Go to the editor
+Test Data :
+Input the number of elements to be stored in the first array :3
+Input 3 elements in the array :
+element - 0 : 1
+
+element - 1 : 2
+
+element - 2 : 3
+
+Input the number of elements to be stored in the second array :3
+
+Input 3 elements in the array :
+
+element - 0 : 1
+
+element - 1 : 2
+
+element - 2 : 3
+
+Expected Output :
+
+The merged array in decending order is :
+
+3 3 2 2 1 1
+
+----------------------------------------------------------------------------
+Program 6) Write a program in C to rotate an array by N positions.
+--------
+Sample input:
+The given array is : 0 3 6 9 12 14 18 20 22 25 27
+Enter the position :4
+
+Sample output :
+After rotating from 4th position the array is:12 14 18 20 22 25 27 0 3 6 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========================================================================
+
+
+
+FrequencyOfEachElement
+Write a program in C to count the frequency of each element of an array.
+
+Sample input :
+Enter size of array : 5
+Enter 5 elements    : 43 25 12 43 43 
+
+Sample output :
+The frequency of all elements of an array :
+25 occurs 1 times
+12 occurs 1 times
+43 occurs 3 times
+Sample Input
+4
+25
+25
+32
+4
+Sample Output
+The frequency of all elements of an array:
+25 occurs 2 times
+32 occurs 1 times
+4 occurs 1 times
+
+
+#include<stdio.h>
+int main()
+{
+    int size;
+    scanf("%d",&size);
+    int arr[size];
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(int j=0;j<size;j++)
+    {
+         int v=1;
+        for(int i=j+1;i<size;i++)
+        {
+            if(arr[i]==arr[j])
+            {
+                v++;
+                arr[i]=0;
+            }
+            
+        }
+        if(arr[j]!=0)
+        {
+            printf("%d occurs %d times\n",arr[j],v);
+            
+        }
+    }
+}
+
+
+
+PrimeElements
+Write a C program to print all the prime elements from an array. The program should:
+
+- Prompt the user to input the size of the array.
+- Input the elements of the array.
+- Identify and print all the prime numbers present in the array.
+- if the array size is 0 or negative it should print an appropriate message.
+
+
+Test Case 1:
+-----------
+input :
+	Enter array size : 7
+	Enter 7 elements: 12 5 9 7 11 2 8
+Output :
+	Prime numbers in the array: 5 7 11 2
+
+Test Case 2:
+-----------
+input :
+	Enter array size : 5
+	Enter 5 elements: 4 6 8 9 10
+Output :
+	Prime numbers in the array: 
+
+Test Case 3:
+-----------	
+input :
+	Enter array size : 4
+	Enter 4 elements: 2 3 5 7
+Output :
+	Prime numbers in the array: 2 3 5 7
+
+Test Case 4:
+-----------
+input :
+	Enter array size : 6
+	Enter 6 elements: -1 0 1 17 19 -23
+Output :
+	Prime numbers in the array: 17 19
+Sample Input
+7
+12
+5
+9
+7
+11
+2
+8
+Sample Output
+5 7 11 2
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int size;
+    scanf("%d",&size);
+    int arr[size];
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+   
+   printf("Prime numbers in the array:");
+   for(int i=0;i<size;i++)
+   {
+       int flage=0;
+       for(int j=1;j<=arr[i];j++)
+       {
+           if(arr[i]%j==0)
+           {
+               flage++;
+               
+           }
+          
+       }
+       if(flage==2)
+       {
+           printf("%d ",arr[i]);
+       }
+   }
+}
+ 
+
+
+
+=============================================================================================================
+	
+Que 1 :  
+=======
+
+Write a C program that creates a 2D array of size 3x3. The program should prompt the user to input the elements of the matrix, 
+with each input being labeled by its row and column index (e.g., element - [0],[0]). 
+After all the elements are entered, the program should print the matrix in a 3x3 format, with each row of the matrix displayed on a new line.
+
+Sample input :
+Input elements in the matrix:
+element - [0],[0] : 1
+element - [0],[1] : 2
+element - [0],[2] : 3
+element - [1],[0] : 4
+element - [1],[1] : 5
+element - [1],[2] : 6
+element - [2],[0] : 7
+element - [2],[1] : 8
+element - [2],[2] : 9
+
+Sample output :
+The matrix is:
+1 2 3
+4 5 6
+7 8 9
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int r,c;
+    printf("entre the size of row and column of the matrix");
+    scanf("%d%d",&r,&c);
+    int arr[r][c];
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr[i][j]);
+            
+        }
+    }
+    printf("printing the matrix\n");
+     for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            
+            printf("%d",arr[i][j]);
+        }
+        printf("\n");
+    }
+    
+}
+
+
+====================================
+
+Que 2 :  
+=======
+
+Write a C program that performs the addition of two square matrices of the same size. 
+The program should first ask for the size of the matrix , then prompt the user to input elements for both matrices. 
+After the matrices are entered, the program should display both matrices and their sum.
+
+Sample input :
+
+Input the size of the square matrix : 2
+Input elements in the first matrix:
+element - [0],[0] : 1
+element - [0],[1] : 2
+element - [1],[0] : 3
+element - [1],[1] : 4
+
+Input elements in the second matrix:
+element - [0],[0] : 5
+element - [0],[1] : 6
+element - [1],[0] : 7
+element - [1],[1] : 8
+
+
+Sample output :
+
+The First matrix is:
+1 2
+3 4
+
+The Second matrix is:
+5 6
+7 8
+
+The Addition of two matrices is:
+6 8
+10 12
+
+
+
+#include<stdio.h>
+int main()
+{
+    int size;
+    printf("Input the size of the square matrix : ");
+    scanf("%d",&size);
+    int arr1[size][size],arr2[size][size],arr3[size][size];
+    printf("Input elements in the first matrix:\n");
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr1[i][j]);
+            
+        }
+    }
+    printf("Input elements in the second matrix:\n");
+     for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr2[i][j]);
+            
+        }
+    }
+    
+    printf("The First matrix is:\n");
+     for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            
+            printf("%d ",arr1[i][j]);
+        }
+        printf("\n");
+    }
+        printf("The Second matrix is:\n");
+     for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            
+            printf("%d ",arr2[i][j]);
+        }
+        printf("\n");
+    }
+    printf("The Addition of two matrices is:\n");
+    
+     for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            arr3[i][j]=arr1[i][j]+arr2[i][j];
+            
+            printf("%d ",arr3[i][j]);
+        }
+        printf("\n");
+    }
+    
+}
+
+
+====================================
+
+Que 3 :  
+=======
+
+Write a C program that computes the transpose of a given matrix. 
+The program should first prompt the user to input the dimensions (rows and columns) of the matrix, followed by the elements of the matrix. 
+After obtaining the matrix, the program should display both the original matrix and its transpose.
+
+Sample input:
+Input the rows and columns of the matrix: 2 2
+Input elements in the matrix:
+element - [0],[0] : 1
+element - [0],[1] : 2
+element - [1],[0] : 3
+element - [1],[1] : 4
+
+
+Sample output :
+The matrix is:
+1 2
+3 4
+
+The transpose of the matrix is:
+1 3
+2 4
+
+
+
+#include<stdio.h>
+int main()
+{
+    int r,c;
+    printf("Input the rows and columns of the matrix: ");
+    scanf("%d%d",&r,&c);
+    int arr1[r][c],arr2[r][c];
+    printf("Input elements in the matrix:\n");
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr1[i][j]);
+            
+        }
+    }
+  
+    
+    printf("The matrix is:\n");
+     for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            
+            printf("%d ",arr1[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("The transpose of the matrix is:\n");
+     for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            
+            printf("%d ",arr1[j][i]);
+        }
+        printf("\n");
+    }
+       
+    
+}
+
+
+====================================
+
+Que 4 :
+=======
+
+Write a program in C to find the sum of the principal diagonal of a matrix.
+
+Sample input :
+Input the size of the square matrix : 3
+Input elements in the 3x3 matrix:
+element - [0],[0] : 1
+element - [0],[1] : 2
+element - [0],[2] : 3
+element - [1],[0] : 2
+element - [1],[1] : 4
+element - [1],[2] : 6
+element - [2],[0] : 3
+element - [2],[1] : 6
+element - [2],[2] : 9
+
+Sample output :
+The matrix is :
+1 2 3
+2 4 6
+3 6 9
+
+Addition of the principal Diagonal elements is : 14
+
+
+
+#include<stdio.h>
+int main()
+{
+    int size,s=0;
+    printf("Input the size of the square matrix : ");
+    scanf("%d",&size);
+    int arr1[size][size];
+    printf("Input elements in the 3x3 matrix:\n");
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr1[i][j]);
+            
+        }
+    }
+  printf("The matrix is :\n");
+     for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            
+            printf("%d ",arr1[i][j]);
+            if(i==j)
+            {
+                s=s+arr1[i][j];
+            }
+            
+        }
+        printf("\n");
+    }
+    printf("Addition of the principal Diagonal elements is : %d",s);
+   
+    
+    
+    
+}
+
+
+====================================
+
+Que 5 :
+=======
+
+Write a program in C to find the sum of the horizontal diagonal of a matrix.
+
+Sample input :
+Input the size of the square matrix : 3
+Input elements in the 3x3 matrix:
+element - [0],[0] : 1
+element - [0],[1] : 2
+element - [0],[2] : 3
+element - [1],[0] : 2
+element - [1],[1] : 4
+element - [1],[2] : 6
+element - [2],[0] : 3
+element - [2],[1] : 6
+element - [2],[2] : 9
+
+Sample output :
+The matrix is :
+1 2 3
+2 4 6
+3 6 9
+
+Addition of the horizontal Diagonal elements is : 10
+
+
+
+#include<stdio.h>
+int main()
+{
+    int size,s=0;
+    printf("Input the size of the square matrix : ");
+    scanf("%d",&size);
+    int arr1[size][size];
+    printf("Input elements in the 3x3 matrix:\n");
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr1[i][j]);
+            
+        }
+    }
+  printf("The matrix is :\n");
+     for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            
+            printf("%d",arr1[i][j]);
+            if((i+j)==2)
+            {
+                s=s+arr1[i][j];
+            }
+            
+        }
+        printf("\n");
+    }
+    printf("Addition of the principal Diagonal elements is : %d",s);
+   
+    
+    
+    
+}
+====================================================================================================================
+	Que 1 :
+=======
+
+Write a program in C to find the sum of rows and columns of a matrix.
+
+Sample input :
+Input the size of the square matrix : 2
+Input elements in the 2*2 matrix :
+element - [0],[0] : 5
+element - [0],[1] : 6
+element - [1],[0] : 7
+element - [1],[1] : 8
+
+Sample Output :
+The matrix is :
+5 6
+7 8
+
+The sum or rows and columns of the matrix is :
+5   6  11
+7   8  15
+12 14
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int  size;
+    printf("Input the size of the square matrix :");
+    scanf("%d",&size);
+    int arr[size][size];
+    
+    printf("Input elements in the 2*2 matrix :\n");
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    printf("The matrix is :\n");
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            
+            printf("%4d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("The sum or rows and columns of the matrix is :\n");
+     for(int i=0;i<size;i++)
+    {
+        int r=0,c=0;
+        for(int j=0;j<size;j++)
+        {
+            
+            printf("%4d ",arr[i][j]);
+            
+           r+=arr[i][j];
+           
+          
+            
+        }
+        printf("%d",r);
+        printf("\n");
+      
+    }
+     for(int i=0;i<size;i++)
+    {
+       int  c=0;
+        for(int j=0;j<size;j++)
+        {
+            
+         
+         
+           c+=arr[j][i];
+           
+          
+            
+        }
+    printf("%4d ",c);
+   
+        
+    }
+    
+    
+    
+}
+
+
+
+
+===================================
+
+Que 2 : 
+=======
+
+Write a program in C to accept two matrices and check whether they are equal.
+
+Sample input :
+Input Rows and Columns of the 1st matrix :2 2
+Input Rows and Columns of the 2nd matrix :2 2
+Input elements in the first matrix :
+element - [0],[0] : 1
+element - [0],[1] : 2
+element - [1],[0] : 3
+element - [1],[1] : 4
+
+Input elements in the second matrix :
+element - [0],[0] : 1
+element - [0],[1] : 2
+element - [1],[0] : 3
+element - [1],[1] : 4
+
+Sample output :
+The first matrix is :
+1 2
+3 4
+The second matrix is :
+1 2
+3 4
+Two matrices are equal.
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int  size,nr1,nc1,nr2,nc2,flag=0;
+    printf("Input Rows and Columns of the 1st matrix :");
+    scanf("%d%d",&nr1,&nc1);
+    printf("Input Rows and Columns of the 2nd matrix :");
+    scanf("%d%d",&nr2,&nc2);
+    int arr1[nr1][nc1],arr2[nr2][nc2];
+    
+    printf("Input elements in the first matrix :\n");
+    for(int i=0;i<nr1;i++)
+    {
+        for(int j=0;j<nc1;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            scanf("%d",&arr1[i][j]);
+        }
+    }
+   printf("Input elements in the second matrix :\n");
+    for(int i=0;i<nr2;i++)
+    {
+        for(int j=0;j<nc2;j++)
+        {
+            printf("element - [%d],[%d] : ",i,j);
+            
+            scanf("%d",&arr2[i][j]);
+        }
+        
+    }
+    printf("The first matrix is :\n");
+     for(int i=0;i<nr1;i++)
+    {
+        
+        for(int j=0;j<nc1;j++)
+        {
+            
+            printf("%d",arr1[i][j]);
+        }
+     
+        printf("\n");
+      
+    }
+    printf("The second matrix is :\n");
+     for(int i=0;i<nr2;i++)
+    {
+      
+        for(int j=0;j<nc2;j++)
+        {
+            
+          printf("%d",arr2[i][j]);
+          if(arr1[i][j]!=arr2[i][j])
+          {
+              flag=1;
+          }
+            
+        }
+    printf("\n");
+   
+        
+    }
+    if(flag==0)
+    {
+        printf("Two matrices are equal.");
+    }
+    
+    
+    
+}
+
+
+===================================
+
+
+
+
+Que 3 :
+=======
+
+Write a C program to find the maximum element of each row.
+
+Examples: 
+
+Input : [1, 2, 3, 21]
+        [12, 1, 65, 9]
+        [1, 56, 34, 2]
+
+Output :
+Maximum element of row 1: 21
+Maximum element of row 2: 65
+Maximum element of row 3: 56
+
+===================================
+
+
+#include<stdio.h>
+int main()
+{
+    int  size,r,c;
+    printf("Input the size of the square matrix :");
+    scanf("%d%d",&r,&c);
+    int arr[r][c];
+    
+    printf("Input elements in the %d*%d matrix :\n",r,c);
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+          
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    printf("printing the data\n");
+      for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+          
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+      for(int i=0;i<r;i++)
+    {
+        int max=arr[i][0];
+        for(int j=0;j<c;j++)
+        {
+            if(arr[i][j]>max)
+            {
+                max=arr[i][j];
+            }
+           
+            
+        }
+       printf("Maximum element of row 1: %d\n",max);
+    }
+    
+    roe
+}
+
+
+Que 4 :
+=======
+
+Write a C program to check given matrix is magic matrix or not.
+
+sum of each rows , sum of each columns , sum of principal diagonal and sum of horizontal diagonal is same then the matrix is magic matrix.
+ 
+Example : arr[][] = [ 2   7   6 ]
+                    [ 9   5   1 ]
+                    [ 4   3   8 ]
+   
+Output : given matrix is magic matrix
+
+Explanation: In matrix sum of each row and each column and diagonals sum is same = 15.
+
+
+
+#include<stdio.h>
+int main()
+{
+   
+    int arr[3][3]={{2,7,6},{9,5,1},{4,3,8}};
+    int sum=0,columsum,rowsum,dia1=0,dia2=0;
+   
+    for(int i=0;i<3;i++)
+    {
+       sum+=arr[0][i];
+    }
+      for(int i=0;i<3;i++)
+    {
+        rowsum=0;
+        columsum=0;
+        for(int j=0;j<3;j++)
+        {
+          rowsum+=arr[i][j];
+          columsum+=arr[i][j];
+        }
+        if(rowsum!=sum||columsum!=sum)
+        {
+            printf("not a magic matrix");
+            return 0;
+        }
+        dia1+=arr[i][i];
+        dia2+=arr[i][3-i-1];
+        
+    }
+    if(dia1!=sum||dia2!=sum)
+    {
+        printf("it is not a magic number\n");
+    }
+    else
+    {
+        printf("it is magic number");
+    }
+}
+
+====================================================================================================
+	
 
 
 
