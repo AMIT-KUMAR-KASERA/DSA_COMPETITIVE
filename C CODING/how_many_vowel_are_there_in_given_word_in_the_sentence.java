@@ -23,6 +23,34 @@ class Main {
     }
 }
 
-
+class Main {
+    public static void main(String[] args) {
+        String str="Amit is an excellent engineer";
+        int count=0;
+        
+        str=str.toUpperCase();
+        boolean vowel=true;
+       
+        for(int i=0;i<str.length();i++)
+        {
+          char ch=str.charAt(i);
+          if(ch==' ')
+          {
+              vowel=true;
+          }
+          else if(vowel)
+          {
+              if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+              {
+                  count++;
+              }
+              vowel=false;
+              
+          }
+        }
+        System.out.println(count);
+        
+    }
+}
 
 
