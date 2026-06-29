@@ -1,0 +1,51 @@
+Example
+Input:
+1 2 3 2 1 4 2
+
+Output:
+1 = 2
+2 = 3
+3 = 1
+4 = 1
+
+Meaning:
+
+1 appears 2 times
+2 appears 3 times
+3 appears 1 time
+4 appears 1 time
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+   System.out.println("enter the size of the array");
+   int n=sc.nextInt();
+   int[] arr=new int[n];
+   System.out.println("enter the element in array");
+   for(int i=0;i<n;i++)
+   {
+       arr[i]=sc.nextInt();
+   }
+   System.out.println("perform some operation in array");
+   for(int i=0;i<n;i++)
+   {
+       int count=1;
+       for(int j=i+1;j<n;j++)
+       {
+          
+           if(arr[i]==arr[j])
+           {
+               count++;
+               arr[j]='*';
+               
+           }
+       }
+       if(arr[i]!='*')
+       {
+        System.out.println(arr[i] + " = " + count);   
+       }
+       
+       
+   }
+}}
